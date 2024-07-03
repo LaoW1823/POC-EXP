@@ -65,7 +65,7 @@ def poc(target):
         response = requests.post(url=url,headers=headers,data=data,proxies=proxies,timeout=5,verify=False)
         # print(response.headers)
         if response.status_code == 200 and 'xml' in response.text and 'version' in response.text and 'extensions' in response.text:
-            print( f"{GREEN}[+] {url} 存在RCE漏洞！{RESET}")
+            print( f"{GREEN}[+] {url} 存在XXE漏洞！{RESET}")
             with open('result.txt','a',encoding='utf-8')as f:
                 f.write(target + '\n')
                 return True
